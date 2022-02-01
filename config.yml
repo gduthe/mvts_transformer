@@ -1,0 +1,39 @@
+# settings for executing the run
+run_settings:
+  validate: True
+  datasplit_random_state: 17
+  datasplit_train_ratio: 0.8
+  num_t_workers: 6
+  num_v_workers: 2
+
+# settings that handle the io
+io_settings:
+  # dataset path can either be single hdf5 file, list of hdf5 files or dir containing hdf5 files
+  dataset_path: 'B:\nhcpp_datasets\publishing\train\'
+  run_dir: './runs'
+  save_epochs: 10
+  pretrained_model: '' # leave empty string if not using pretrained model
+
+# training loop hyperparameters
+hyperparameters:
+  epochs: 160
+  batch_size: 30
+  learning_rate: 5e-5
+  lr_decay_gamma: 0.2
+  lr_decay_step: 40
+  normalize_mvts: True
+
+# model architecture settings
+model_settings:
+  mvts_length: 60000
+  patch_size: 200
+  dim: 256
+  depth: 6
+  heads: 8
+  dim_head: 64
+  mlp_dim: 2048
+  pool: 'cls' # 'cls' or 'mean'
+  dropout: 0.3
+  emb_dropout: 0.3
+  in_embedding: 'linear' #'linear' or 'rocket'
+  pos_encoding: 'none' #'linear', 'classic' or 'none'
