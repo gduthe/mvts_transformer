@@ -20,7 +20,7 @@ hyperparameters:
   batch_size: 30
   learning_rate: 5e-5
   lr_decay_gamma: 0.2
-  lr_decay_step: 40
+  lr_decay_step: 30
   normalize_mvts: True
 
 # model architecture settings
